@@ -20,7 +20,7 @@ public class ProjectClick
         //
         EditorApplication.projectWindowItemOnGUI = (string guid, Rect selectionRect) =>
         {
-            Debug.LogError(1);
+            //Debug.LogError(1);
         };
         
     }
