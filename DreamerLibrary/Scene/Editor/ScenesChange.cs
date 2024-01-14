@@ -10,10 +10,11 @@ using UnityEngine.SceneManagement;
 
 public class ScenesChange : Editor
 {
+    //Unity编译完成就去调用这个方法
     [InitializeOnLoadMethod]
     static void InitSwitcher()
     {
-        SceneView.duringSceneGui += (SceneView scene) =>
+        SceneView.duringSceneGui += (SceneView scene) => 
         {
             Handles.BeginGUI();
             {
