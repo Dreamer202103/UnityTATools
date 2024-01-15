@@ -84,6 +84,7 @@ public class ProjectHiddenEditorWindow : EditorWindow
                     bool _isToggle= EditorPrefs.GetBool(key);
                     if (!_isToggle)
                     {
+                        
                         EditorGUI.DrawRect(new Rect(SelectionRect.x - 50, SelectionRect.y, SelectionRect.width + 50, SelectionRect.height), new Color(0.22f, 0.22f, 0.22f, 1.0f));
                     }
                 }
