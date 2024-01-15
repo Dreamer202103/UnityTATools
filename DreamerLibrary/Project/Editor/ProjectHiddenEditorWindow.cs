@@ -7,8 +7,8 @@ public class ProjectHiddenEditorWindow : EditorWindow
 {
     #region[数据成员]
     //一个字符串的数组
-    private static string[] assetSubPath;
-    private static bool[] isAssetSubToggle;
+    private string[] assetSubPath;
+    private bool[] isAssetSubToggle;
     #endregion
 
     #region[初始化]
@@ -67,22 +67,28 @@ public class ProjectHiddenEditorWindow : EditorWindow
         
     }
     #endregion
+    #region[委托Lambda表达式]
     [InitializeOnLoadMethod]
     static void InitHiddenProject()
     {
+        string[] _assetSubPath = AssetDatabase.GetSubFolders("Assets");
         EditorApplication.projectWindowItemOnGUI = (string guid, Rect SelectionRect) =>
         {
+            
             string path = AssetDatabase.GUIDToAssetPath(guid);
-            for (int i = 0; i < assetSubPath.Length; i++)
+            for (int i = 0; i < _assetSubPath.Length; i++)
             {
-                if(path == assetSubPath[i])
+                if(path == _assetSubPath[i])
                 {
-                    if (!isAssetSubToggle[i])
+                    string key = string.Format("projectHidden_{0}", _assetSubPath[i]);
+                    bool _isToggle= EditorPrefs.GetBool(key);
+                    if (!_isToggle)
                     {
-                        EditorGUI.DrawRect(SelectionRect,Color.gray);
+                        EditorGUI.DrawRect(new Rect(SelectionRect.x - 50, SelectionRect.y, SelectionRect.width + 50, SelectionRect.height), new Color(0.22f, 0.22f, 0.22f, 1.0f));
                     }
                 }
             }
         };
     }
+    #endregion
 }
