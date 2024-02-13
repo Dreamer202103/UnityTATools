@@ -11,9 +11,13 @@ public class ModelProcessor : AssetPostprocessor
     {
         Debug.LogError("OnPreprocessAsset");
     }
-    //当导入模型时执行(OnPostprocessModel())
-    void OnPostprocessModel()
+    //当导入模型时执行(OnPreprocessModel())
+    void OnPreprocessModel()
     {
-        Debug.LogError("OnPostprocessModel()");
+        Debug.LogError("OnPreprocessModel");
+    }
+    void OnPostprocessModel(GameObject g)
+    {
+        Debug.LogError("OnPostprocessModel");
     }
 }
