@@ -18,6 +18,13 @@ public class ModelProcessor : AssetPostprocessor
     }
     void OnPostprocessModel(GameObject g)
     {
-        Debug.LogError("OnPostprocessModel");
+        //ModelImporter是一个类继承AssetImporter
+        //unity的资源导入器
+        //assetImporter是一个属性
+        //as ModelImporter
+        //ModelImporter modelImporter = assetImporter as ModelImporter;
+        //强制转换
+        ModelImporter importer = (ModelImporter)assetImporter;
+        Debug.LogError(importer.isReadable);
     }
 }
