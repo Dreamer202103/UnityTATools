@@ -30,6 +30,5 @@ public class ModelProcessor : AssetPostprocessor
         //将assetImporter强制转换ModelImporter类型
         ModelImporter importer = (ModelImporter)assetImporter;
         importer.isReadable = false;
-
     }
 }
