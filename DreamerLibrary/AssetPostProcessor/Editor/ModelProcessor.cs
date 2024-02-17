@@ -30,5 +30,24 @@ public class ModelProcessor : AssetPostprocessor
         //将assetImporter强制转换ModelImporter类型
         ModelImporter importer = (ModelImporter)assetImporter;
         importer.isReadable = false;
+        //层级结构
+        importer.preserveHierarchy = false;
+        //模型压缩,只是压缩包体大小，不能优化内存
+        importer.meshCompression = ModelImporterMeshCompression.Low;
+        //模型可读写，意思是模型在运行是否可以使用脚本进行读写。
+        //打开会消耗内存
+        importer.isReadable = false;
+        //
+        importer.keepQuads = false;
+        //
+        importer.weldVertices = false;
+        //索引格式，当顶点数超过2的16次方的时候。再申请
+        importer.indexFormat = ModelImporterIndexFormat.Auto;
+        //模型法线的导入设置
+        importer.importNormals = ModelImporterNormals.Import;
+        //法线的导入
+        importer.importTangents = ModelImporterTangents.Import;
+
+
     }
 }
