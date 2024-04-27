@@ -85,7 +85,8 @@ public class ProjectHiddenEditorWindow : EditorWindow
                     if (!_isToggle)
                     {
                         
-                        EditorGUI.DrawRect(new Rect(SelectionRect.x - 50, SelectionRect.y, SelectionRect.width + 50, SelectionRect.height), new Color(0.22f, 0.22f, 0.22f, 1.0f));
+                       // EditorGUI.DrawRect(new Rect(SelectionRect.x - 50, SelectionRect.y, SelectionRect.width + 50, SelectionRect.height), new Color(0.22f, 0.22f, 0.22f, 1.0f));
+                        EditorGUI.DrawRect(new Rect(SelectionRect.x - 50, SelectionRect.y, SelectionRect.width + 50, SelectionRect.height), new Color(0.22f, 0.22f, 0.22f, 0.0f));
                     }
                 }
             }
