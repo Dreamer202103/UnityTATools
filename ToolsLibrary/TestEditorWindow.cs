@@ -22,6 +22,7 @@ public class TestEditorWindow : EditorWindow
             var obj = Selection.activeObject;
             //获取obj的路径
             string path = AssetDatabase.GetAssetPath(obj);
+            Debug.Log(path);
             //string[] path = AssetDatabase.GetAllAssetPaths();
             //foreach(var item in path)
             //{
