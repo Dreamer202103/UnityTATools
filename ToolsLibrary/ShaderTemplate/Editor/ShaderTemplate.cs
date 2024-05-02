@@ -6,8 +6,9 @@ using System.IO;
 
 public class ShaderTemplate 
 {
+    //CONTEXT后面 接一个物体的组件
     [MenuItem("Assets/Create/Shader/Unlit URP Shader")]
-
+    //下面的方法必须是静态方法
     public static void Init()
     {
         //Debug.LogError(AssetDatabase.AssetPathToGUID("Assets/ToolsLibrary/ShaderTemplate/Model/URPLit.shader"));

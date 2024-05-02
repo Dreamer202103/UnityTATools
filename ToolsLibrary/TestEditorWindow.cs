@@ -5,6 +5,7 @@ using UnityEditor;
 
 public class TestEditorWindow : EditorWindow
 {
+    //Attritube 特性，可以放在类、方法、字段上面
     [MenuItem("Tools/Test")]
     public static void Open()
     {
